@@ -11,6 +11,7 @@
 		"~ Power-Armour-Replacer >= 0.3",
 		"? space-age",
 		"(?) mech-armor >= 1.0.0",
+		"! mech-armor-settings",
 		"! Early-Armor-Grid",
 		"! Moar-Grid",
 		"! nullius"
