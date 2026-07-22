@@ -20,29 +20,28 @@ local function Hide_Item(name)
 end
 
 
-if mods["PARs-SpaceAge-Extension"] then
-    if (mods["space-age"] or mods["mech-armor"])then
+if (mods["space-age"] or mods["mech-armor"])then
 
-        DRT["mech-armor"].enabled = false
+    DRT["mech-armor"].enabled = false
 
-        DRR["mech-armor"].hidden = true
+    DRR["mech-armor"].hidden = true
 
-        DRT["mech-armor"].hidden = true
+    DRT["mech-armor"].hidden = true
 
-        if SS["MechTechFilters"].value then
-            Hide_Item("mech-armor")
-        end
+    if SS["MechTechFilters"].value then
+        Hide_Item("mech-armor")
     end
-    if mods["space-age"] and mods["incendiary-arsenal"]then
+end
 
-        DRT["mech-armor-fireproof"].enabled = false
+if mods["space-age"] and mods["incendiary-arsenal"]then
 
-        DRR["mech-armor-fireproof"].hidden = true
+    DRT["mech-armor-fireproof"].enabled = false
 
-        DRT["mech-armor-fireproof"].hidden = true
+    DRR["mech-armor-fireproof"].hidden = true
 
-        if SS["MechTechFilters"].value then
-            Hide_Item("mech-armor-fireproof")
-        end
+    DRT["mech-armor-fireproof"].hidden = true
+
+    if SS["MechTechFilters"].value then
+        Hide_Item("mech-armor-fireproof")
     end
 end
