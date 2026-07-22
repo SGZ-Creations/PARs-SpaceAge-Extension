@@ -1,4 +1,4 @@
-local tile_sounds = require("__PARs-SpaceAge-Extension__/Core/tile-sounds")
+local tile_sounds = require("__PARs-SpaceAge-Extension__/internal/tile-sounds")
 local Tiles = data.raw["tile"]
 
 Tiles["water-shallow"].landing_steps_sound = tile_sounds.landing.wet

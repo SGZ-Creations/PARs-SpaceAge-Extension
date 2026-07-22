@@ -1,5 +1,5 @@
 local factoriopedia_mech_armor_simulation = { init = [[ game.simulation.camera_zoom = 3.5 game.simulation.camera_position = {0.5, -0.4} local character = game.surfaces[1].create_entity{name = "character", position = {0.5, 0.5}, force = "player", direction = defines.direction.south}character.insert{name = "mech-armor"}]]}
-require("__PARs-SpaceAge-Extension__.Core.mech-armor-animations")
+require("__PARs-SpaceAge-Extension__.internal.mech-armor-animations")
 local smoke_animations = require("__base__.prototypes.entity.smoke-animations")
 local item_sounds = require("__base__.prototypes.item_sounds")
 local sounds = require("__base__.prototypes.entity.sounds")
@@ -53,7 +53,7 @@ for tier, mechsuit in pairs(MechSuits) do
 	local equipment_order = mechsuit.order .. "[par-armour-mk" .. tier .. "]-ab[armour-replacer]"
 
     ---@type data.ArmorPrototype
-	local equipment_mechsuit= {
+	local equipment_mechsuit = {
 		type = "armor",
 		name = equipment_name,
 		icon = mechsuit.icon,
@@ -111,15 +111,15 @@ for tier, mechsuit in pairs(MechSuits) do
 		inventory_move_sound = item_sounds.armor_large_inventory_move,
 		pick_sound = item_sounds.armor_large_inventory_pickup,
 		drop_sound = item_sounds.armor_large_inventory_move,
-		takeoff_sound = {filename = "__PARs-SpaceAge-Extension__/sound/mech-armor-takeoff.ogg", volume = 0.2, aggregation = {max_count = 2, remove = true, count_already_playing = true}},
-		landing_sound = {filename = "__PARs-SpaceAge-Extension__/sound/mech-armor-land.ogg", volume = 0.3, aggregation = {max_count = 2, remove = true, count_already_playing = true}},
-		flight_sound = {sound={filename = "__PARs-SpaceAge-Extension__/sound/mech-armor-flight.ogg", volume = 0.2}},
+		takeoff_sound = {filename = "__PARs-SpaceAge-Extension__/internal/sound/mech-armor-takeoff.ogg", volume = 0.2, aggregation = {max_count = 2, remove = true, count_already_playing = true}},
+		landing_sound = {filename = "__PARs-SpaceAge-Extension__/internal/sound/mech-armor-land.ogg", volume = 0.3, aggregation = {max_count = 2, remove = true, count_already_playing = true}},
+		flight_sound = {sound={filename = "__PARs-SpaceAge-Extension__/internal/sound/mech-armor-flight.ogg", volume = 0.2}},
 		steps_sound =  {
-			variations = sound_variations("__PARs-SpaceAge-Extension__/sound/mech-armor-steps-metallic", 5, 0.2),
+			variations = sound_variations("__PARs-SpaceAge-Extension__/internal/sound/mech-armor-steps-metallic", 5, 0.2),
 			advanced_volume_control = default_tile_sounds_advanced_volume_control(),
 		},
 		moving_sound = {
-			variations = sound_variations("__PARs-SpaceAge-Extension__/sound/mech-armor-moves", 10, 0.4),
+			variations = sound_variations("__PARs-SpaceAge-Extension__/internal/sound/mech-armor-moves", 10, 0.4),
 			advanced_volume_control = default_tile_sounds_advanced_volume_control(),
 		},
 		collision_box = {{-0.25, -0.25}, {0.25, 0.25}},
@@ -127,27 +127,7 @@ for tier, mechsuit in pairs(MechSuits) do
 		open_sound = sounds.armor_open,
 		close_sound = sounds.armor_close,
 	},
-
-	if SS["Durability"].value == "ArmourdurabilityOFF" then
-        equipment_mechsuit.infinite = true
-    elseif SS["Durability"].value == "ArmourDurabilityAll" then
-        equipment_mechsuit.durability = SS["SingleArmourDurabilitySetting"].value
-    elseif SS["Durability"].value == "ArmourDurabilitySolo" then
-        equipment_mechsuit.durability = mechsuit.durability
-    end
-
-	smoke_animations.trivial_smoke
-	{
-		name = "mech-armor-smoke",
-		color = {r = 0.5, g = 0.5, b = 0.5, a = 0.5},
-		duration = 50,
-		spread_duration = 50,
-		fade_in_duration = 10,
-		fade_away_duration = 40,
-		start_scale = 0.1,
-		end_scale = 0.3
-	}
-	---@type data.EquipmentGridPrototype
+    ---@type data.EquipmentGridPrototype
     local equipment_grid = {
         name = equipment_grid_name,
         type = "equipment-grid",
@@ -155,6 +135,14 @@ for tier, mechsuit in pairs(MechSuits) do
         width = mechsuit.grid_width,
         height = mechsuit.grid_height,
     },
+
+    if SS["Durability"].value == "ArmourdurabilityOFF" then
+        equipment_mechsuit.infinite = true
+    elseif SS["Durability"].value == "ArmourDurabilityAll" then
+        equipment_mechsuit.durability = SS["SingleArmourDurabilitySetting"].value
+    elseif SS["Durability"].value == "ArmourDurabilitySolo" then
+        equipment_mechsuit.durability = mechsuit.durability
+    end
 
 	if mods["bobenemies"] then
         table.insert(equipment_mechsuit.resistances, {
@@ -184,6 +172,18 @@ for tier, mechsuit in pairs(MechSuits) do
             percent = resistances.radiation_percent[tier],
         })
     end
+
+    smoke_animations.trivial_smoke
+	{
+		name = "mech-armor-smoke",
+		color = {r = 0.5, g = 0.5, b = 0.5, a = 0.5},
+		duration = 50,
+		spread_duration = 50,
+		fade_in_duration = 10,
+		fade_away_duration = 40,
+		start_scale = 0.1,
+		end_scale = 0.3
+	}
 
 	data:extend({
         equipment_mechsuit,

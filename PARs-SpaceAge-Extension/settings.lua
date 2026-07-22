@@ -1,0 +1,1 @@
+require("__PARs-SpaceAge-Extension__.Settings.MechSuit")
