@@ -126,7 +126,8 @@ for tier, mechsuit in pairs(MechSuits) do
 		drawing_box = {{-0.4, -2}, {0.4, 0}},
 		open_sound = sounds.armor_open,
 		close_sound = sounds.armor_close,
-	},
+	}
+
     ---@type data.EquipmentGridPrototype
     local equipment_grid = {
         name = equipment_grid_name,
@@ -134,7 +135,7 @@ for tier, mechsuit in pairs(MechSuits) do
         equipment_categories = {"armor"},
         width = mechsuit.grid_width,
         height = mechsuit.grid_height,
-    },
+    }
 
     if SS["Durability"].value == "ArmourdurabilityOFF" then
         equipment_mechsuit.infinite = true
