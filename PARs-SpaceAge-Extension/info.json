@@ -8,7 +8,7 @@
 	"space_travel_required": true,
 	"dependencies": [
 		"base", 
-		"~ Power-Armour-Replacer >= 0.6",
+		"~ Power-Armour-Replacer >= 0.6.5",
 		"+ space-age",
 		"(?) mech-armor >= 1.0.0",
 		"(?) incendiary-arsenal >= 1.0.1",
