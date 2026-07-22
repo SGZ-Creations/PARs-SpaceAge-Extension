@@ -41,7 +41,14 @@ if mods["space-age"] and mods["incendiary-arsenal"]then
 
     Tech["mech-armor-fireproof"].hidden = true
 
-    if SS["MechTechFilters"].value then
+    if SS["FireMechTechFilters"].value then
         Hide_Item("mech-armor-fireproof")
     end
+end
+
+
+if mods["RampantArsenalFork"] then
+    if (mods["space-age"] or mods["mech-armor"]) then
+        log(nil)
+    end 
 end

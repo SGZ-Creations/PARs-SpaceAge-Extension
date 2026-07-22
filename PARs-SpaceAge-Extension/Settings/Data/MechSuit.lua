@@ -34,7 +34,7 @@ data:extend({
     },
     {
         type = "int-setting",
-        name = "MechWeight_05",
+        name = "MechDurability_05",
         setting_type = "startup",
         default_value = 500000,
         minimum_value = 1,

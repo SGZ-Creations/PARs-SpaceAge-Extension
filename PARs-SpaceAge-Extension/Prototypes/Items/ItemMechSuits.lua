@@ -6,11 +6,11 @@ local sounds = require("__base__.prototypes.entity.sounds")
 local SS = settings.startup
 
 local MechSuits = {
-	{order = "baa", helthbonus = 1000, flight = false, inventory_bonus = 100, grid_width = 40, grid_height = 40, durability= SS["MechDurability_01"].value, weightvalue = SS["MechWeight_01"].value, icon = "__PARs-SpaceAge-Extension__/graphics/icons/mech-armor.png"},
-	{order = "bab", helthbonus = 2000, flight = false, inventory_bonus = 200, grid_width = 60, grid_height = 60, durability= SS["MechDurability_02"].value, weightvalue = SS["MechWeight_02"].value, icon = "__PARs-SpaceAge-Extension__/graphics/icons/mech-armor.png"},
-	{order = "bac", helthbonus = 3000, flight = true, inventory_bonus = 300, grid_width = 80, grid_height = 80, durability= SS["MechDurability_03"].value, weightvalue = SS["MechWeight_03"].value, icon = "__PARs-SpaceAge-Extension__/graphics/icons/mech-armor.png"},
-	{order = "bad", helthbonus = 4000, flight = true, inventory_bonus = 400, grid_width = 100, grid_height = 100, durability= SS["MechDurability_04"].value, weightvalue = SS["MechWeight_04"].value, icon = "__PARs-SpaceAge-Extension__/graphics/icons/mech-armor.png"},
-	{order = "bae", helthbonus = 5000, flight = true, inventory_bonus = 500, grid_width = 120, grid_height = 120, durability= SS["MechDurability_05"].value, weightvalue = SS["MechWeight_05"].value, icon = "__PARs-SpaceAge-Extension__/graphics/icons/mech-armor.png"},
+	{order = "baa", helthbonus = 1000, flight = false, drawings = nil, colisions= nil, inventory_bonus = 100, grid_width = 40, grid_height = 40, durability= SS["MechDurability_01"].value, weightvalue = SS["MechWeight_01"].value, icon = "__PARs-SpaceAge-Extension__/graphics/icons/mech-armor.png"},
+	{order = "bab", helthbonus = 2000, flight = false, drawings = nil, colisions= nil, inventory_bonus = 200, grid_width = 60, grid_height = 60, durability= SS["MechDurability_02"].value, weightvalue = SS["MechWeight_02"].value, icon = "__PARs-SpaceAge-Extension__/graphics/icons/mech-armor.png"},
+	{order = "bac", helthbonus = 3000, flight = true, drawings = {{-0.4, -2}, {0.4, 0}}, colisions= {{-0.25, -0.25}, {0.25, 0.25}}, inventory_bonus = 300, grid_width = 80, grid_height = 80, durability= SS["MechDurability_03"].value, weightvalue = SS["MechWeight_03"].value, icon = "__PARs-SpaceAge-Extension__/graphics/icons/mech-armor.png"},
+	{order = "bad", helthbonus = 4000, flight = true, drawings = {{-0.4, -2}, {0.4, 0}}, colisions= {{-0.25, -0.25}, {0.25, 0.25}}, inventory_bonus = 400, grid_width = 100, grid_height = 100, durability= SS["MechDurability_04"].value, weightvalue = SS["MechWeight_04"].value, icon = "__PARs-SpaceAge-Extension__/graphics/icons/mech-armor.png"},
+	{order = "bae", helthbonus = 5000, flight = true, drawings = {{-0.4, -2}, {0.4, 0}}, colisions= {{-0.25, -0.25}, {0.25, 0.25}}, inventory_bonus = 500, grid_width = 120, grid_height = 120, durability= SS["MechDurability_05"].value, weightvalue = SS["MechWeight_05"].value, icon = "__PARs-SpaceAge-Extension__/graphics/icons/mech-armor.png"},
 }
 
 local resistances = {
@@ -122,8 +122,8 @@ for tier, mechsuit in pairs(MechSuits) do
 			variations = sound_variations("__PARs-SpaceAge-Extension__/internal/sound/mech-armor-moves", 10, 0.4),
 			advanced_volume_control = default_tile_sounds_advanced_volume_control(),
 		},
-		collision_box = {{-0.25, -0.25}, {0.25, 0.25}},
-		drawing_box = {{-0.4, -2}, {0.4, 0}},
+		collision_box =mechsuit.colisions,
+		drawing_box = mechsuit.drawings, {{-0.4, -2}, {0.4, 0}},
 		open_sound = sounds.armor_open,
 		close_sound = sounds.armor_close,
 	}

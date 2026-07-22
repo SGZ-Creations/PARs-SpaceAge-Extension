@@ -2,7 +2,7 @@ data:extend({
 	{
 		type = "technology",
 		name = "par-mech-armor-tech-mk1",
-		icon = "__PARs-SpaceAge-Extension__\graphics\technology\mech-armor.png",
+		icon = "__PARs-SpaceAge-Extension__/graphics/technology/mech-armor.png",
 		icon_size = 256,
 		effects = {{type = "unlock-recipe", recipe = "par-mech-armour-recipe-mk1" }},
 		prerequisites = {"par-armour-tech-2"},
@@ -19,7 +19,7 @@ data:extend({
 	{
 		type = "technology",
 		name = "par-mech-armor-tech-mk2",
-		icon = "__PARs-SpaceAge-Extension__\graphics\technology\mech-armor.png",
+		icon = "__PARs-SpaceAge-Extension__/graphics/technology/mech-armor.png",
 		icon_size = 256,
 		effects = {{type = "unlock-recipe", recipe = "par-mech-armour-recipe-mk2" }},
 		prerequisites = {"par-armour-tech-4", "par-mech-armor-tech-mk1"},
@@ -37,7 +37,7 @@ data:extend({
 	{
 		type = "technology",
 		name = "par-mech-armor-tech-mk3",
-		icon = "__PARs-SpaceAge-Extension__\graphics\technology\mech-armor.png",
+		icon = "__PARs-SpaceAge-Extension__/graphics/technology/mech-armor.png",
 		icon_size = 256,
 		effects = {{type = "unlock-recipe", recipe = "par-mech-armour-recipe-mk3" }},
 		prerequisites = {"par-armour-tech-6", "par-mech-armor-tech-mk2"},
@@ -56,7 +56,7 @@ data:extend({
 	{
 		type = "technology",
 		name = "par-mech-armor-tech-mk4",
-		icon = "__PARs-SpaceAge-Extension__\graphics\technology\mech-armor.png",
+		icon = "__PARs-SpaceAge-Extension__/graphics/technology/mech-armor.png",
 		icon_size = 256,
 		effects = {{type = "unlock-recipe", recipe = "par-mech-armour-recipe-mk4" }},
 		prerequisites = {"par-armour-tech-8", "par-mech-armor-tech-mk3"},
@@ -76,7 +76,7 @@ data:extend({
 	{
 		type = "technology",
 		name = "par-mech-armor-tech-mk5",
-		icon = "__PARs-SpaceAge-Extension__\graphics\technology\mech-armor.png",
+		icon = "__PARs-SpaceAge-Extension__/graphics/technology/mech-armor.png",
 		icon_size = 256,
 		effects = {{type = "unlock-recipe", recipe = "par-mech-armour-recipe-mk5" }},
 		prerequisites = {"par-armour-tech-10", "par-mech-armor-tech-mk4"},
@@ -100,7 +100,7 @@ if mods["space-age"]then
 		{
 			type = "technology",
 			name = "par-mech-armor-tech-mk1",
-			icon = "__PARs-SpaceAge-Extension__\graphics\technology\mech-armor.png",
+			icon = "__PARs-SpaceAge-Extension__/graphics/technology/mech-armor.png",
 			icon_size = 256,
 			effects = {{type = "unlock-recipe", recipe = "par-mech-armour-recipe-mk1" }},
 			prerequisites = {"par-armour-tech-2"},
@@ -117,7 +117,7 @@ if mods["space-age"]then
 		{
 			type = "technology",
 			name = "par-mech-armor-tech-mk2",
-			icon = "__PARs-SpaceAge-Extension__\graphics\technology\mech-armor.png",
+			icon = "__PARs-SpaceAge-Extension__/graphics/technology/mech-armor.png",
 			icon_size = 256,
 			effects = {{type = "unlock-recipe", recipe = "par-mech-armour-recipe-mk2" }},
 			prerequisites = {"par-armour-tech-4", "par-mech-armor-tech-mk1"},
@@ -136,7 +136,7 @@ if mods["space-age"]then
 		{
 			type = "technology",
 			name = "par-mech-armor-tech-mk3",
-			icon = "__PARs-SpaceAge-Extension__\graphics\technology\mech-armor.png",
+			icon = "__PARs-SpaceAge-Extension__/graphics/technology/mech-armor.png",
 			icon_size = 256,
 			effects = {{type = "unlock-recipe", recipe = "par-mech-armour-recipe-mk3" }},
 			prerequisites = {"par-armour-tech-6", "par-mech-armor-tech-mk2"},
@@ -158,7 +158,7 @@ if mods["space-age"]then
 		{
 			type = "technology",
 			name = "par-mech-armor-tech-mk4",
-			icon = "__PARs-SpaceAge-Extension__\graphics\technology\mech-armor.png",
+			icon = "__PARs-SpaceAge-Extension__/graphics/technology/mech-armor.png",
 			icon_size = 256,
 			effects = {{type = "unlock-recipe", recipe = "par-mech-armour-recipe-mk4" }},
 			prerequisites = {"par-armour-tech-8", "par-mech-armor-tech-mk3"},
@@ -181,7 +181,7 @@ if mods["space-age"]then
 		{
 			type = "technology",
 			name = "par-mech-armor-tech-mk5",
-			icon = "__PARs-SpaceAge-Extension__\graphics\technology\mech-armor.png",
+			icon = "__PARs-SpaceAge-Extension__/graphics/technology/mech-armor.png",
 			icon_size = 256,
 			effects = {{type = "unlock-recipe", recipe = "par-mech-armour-recipe-mk5" }},
 			prerequisites = {"par-armour-tech-10", "par-mech-armor-tech-mk4"},
