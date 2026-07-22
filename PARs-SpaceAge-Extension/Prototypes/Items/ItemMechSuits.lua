@@ -65,6 +65,8 @@ for tier, mechsuit in pairs(MechSuits) do
 		character_health_bonus = mechsuit.helthbonus,
 		provides_flight = mechsuit.flight,
 		weight = mechsuit.weightvalue,
+		collision_box = mechsuit.colisions,
+		drawing_box = mechsuit.drawings,
 		resistances = {
 			{
                 type = "physical",
@@ -122,8 +124,6 @@ for tier, mechsuit in pairs(MechSuits) do
 			variations = sound_variations("__PARs-SpaceAge-Extension__/internal/sound/mech-armor-moves", 10, 0.4),
 			advanced_volume_control = default_tile_sounds_advanced_volume_control(),
 		},
-		collision_box =mechsuit.colisions,
-		drawing_box = mechsuit.drawings, {{-0.4, -2}, {0.4, 0}},
 		open_sound = sounds.armor_open,
 		close_sound = sounds.armor_close,
 	}

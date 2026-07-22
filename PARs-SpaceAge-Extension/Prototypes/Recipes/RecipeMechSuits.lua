@@ -3,6 +3,7 @@ data:extend({
 		type = "recipe",
 		name = "par-mech-armour-recipe-mk1",
 		main_product = "par-mech-armour-mk1",
+		categories = {"par-electronic-hands"},
 		enabled = false,
 		energy_required = 60,
 		ingredients ={
@@ -16,11 +17,12 @@ data:extend({
 		type = "recipe",
 		name = "par-mech-armour-recipe-mk2",
 		main_product = "par-mech-armour-mk2",
+		categories = {"par-electronic-hands"},
 		enabled = false,
 		energy_required = 60,
 		ingredients = {
 			{type="item",name="par-armour-mk4", amount=1},
-			{type="item",name="advanced-unit", amount=1000},
+			{type="item",name="advanced-circuit", amount=1000},
 			{type="item",name="par-mech-armour-mk1", amount=1},
 			{type="item",name="electric-engine-unit", amount=1000},
 		},
@@ -30,6 +32,7 @@ data:extend({
 		type = "recipe",
 		name = "par-mech-armour-recipe-mk3",
 		main_product = "par-mech-armour-mk3",
+		categories = {"par-electronics"},
 		enabled = false,
 		energy_required = 60,
 		ingredients = {
@@ -45,6 +48,7 @@ data:extend({
 		type = "recipe",
 		name = "par-mech-armour-recipe-mk4",
 		main_product = "par-mech-armour-mk4",
+		categories = {"par-electronics"},
 		enabled = false,
 		energy_required = 60,
 		ingredients = {
@@ -60,6 +64,7 @@ data:extend({
 		type = "recipe",
 		name = "par-mech-armour-recipe-mk5",
 		main_product = "par-mech-armour-mk5",
+		categories = {"par-electronics"},
 		enabled = false,
 		energy_required = 60,
 		ingredients = {
@@ -78,6 +83,7 @@ if mods["space-age"]then
 			type = "recipe",
 			name = "par-mech-armour-recipe-mk1",
 			main_product = "par-mech-armour-mk1",
+			categories = {"par-electronic-hands"},
 			enabled = false,
 			energy_required = 60,
 			ingredients = {
@@ -91,11 +97,12 @@ if mods["space-age"]then
 			type = "recipe",
 			name = "par-mech-armour-recipe-mk2",
 			main_product = "par-mech-armour-mk2",
+			categories = {"par-electronic-hands"},
 			enabled = false,
 			energy_required = 60,
 			ingredients = {
 				{type="item",name="par-armour-mk4", amount=1},
-				{type="item",name="advanced-unit", amount=1000},
+				{type="item",name="advanced-circuit", amount=1000},
 				{type="item",name="par-mech-armour-mk1", amount=1},
 				{type="item",name="electric-engine-unit", amount=1000},
 			},
@@ -105,6 +112,7 @@ if mods["space-age"]then
 			type = "recipe",
 			name = "par-mech-armour-recipe-mk3",
 			main_product = "par-mech-armour-mk3",
+			categories = {"par-electronics"},
 			enabled = false,
 			energy_required = 60,
 			ingredients = {
@@ -125,6 +133,7 @@ if mods["space-age"]then
 			type = "recipe",
 			name = "par-mech-armour-recipe-mk4",
 			main_product = "par-mech-armour-mk4",
+			categories = {"par-electronics"},
 			enabled = false,
 			energy_required = 60,
 			ingredients = {
@@ -152,6 +161,7 @@ if mods["space-age"]then
 			type = "recipe",
 			name = "par-mech-armour-recipe-mk5",
 			main_product = "par-mech-armour-mk5",
+			categories = {"par-electronics"},
 			enabled = false,
 			energy_required = 60,
 			ingredients = {
