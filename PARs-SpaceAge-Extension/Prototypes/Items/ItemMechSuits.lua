@@ -1,63 +1,116 @@
-require("__PARs-SpaceAge-Extension__.Structures.mech-armor-animations")
+local factoriopedia_mech_armor_simulation = { init = [[ game.simulation.camera_zoom = 3.5 game.simulation.camera_position = {0.5, -0.4} local character = game.surfaces[1].create_entity{name = "character", position = {0.5, 0.5}, force = "player", direction = defines.direction.south}character.insert{name = "mech-armor"}]]}
+require("__PARs-SpaceAge-Extension__.Core.mech-armor-animations")
 local smoke_animations = require("__base__.prototypes.entity.smoke-animations")
-
 local item_sounds = require("__base__.prototypes.item_sounds")
 local sounds = require("__base__.prototypes.entity.sounds")
+local SS = settings.startup
 
-local factoriopedia_mech_armor_simulation = {
-init = [[
-		game.simulation.camera_zoom = 3.5
-		game.simulation.camera_position = {0.5, -0.4}
-		local character = game.surfaces[1].create_entity{name = "character", position = {0.5, 0.5}, force = "player", direction = defines.direction.south}
-		character.insert{name = "mech-armor"}
-	]]
+local MechSuits = {
+	{order = "baa", helthbonus = 1000, flight = false, inventory_bonus = 100, grid_width = 40, grid_height = 40, durability= SS["MechDurability_01"].value, weightvalue = SS["MechWeight_01"].value, icon = "__PARs-SpaceAge-Extension__/graphics/icons/mech-armor.png"},
+	{order = "bab", helthbonus = 2000, flight = false, inventory_bonus = 200, grid_width = 60, grid_height = 60, durability= SS["MechDurability_02"].value, weightvalue = SS["MechWeight_02"].value, icon = "__PARs-SpaceAge-Extension__/graphics/icons/mech-armor.png"},
+	{order = "bac", helthbonus = 3000, flight = true, inventory_bonus = 300, grid_width = 80, grid_height = 80, durability= SS["MechDurability_03"].value, weightvalue = SS["MechWeight_03"].value, icon = "__PARs-SpaceAge-Extension__/graphics/icons/mech-armor.png"},
+	{order = "bad", helthbonus = 4000, flight = true, inventory_bonus = 400, grid_width = 100, grid_height = 100, durability= SS["MechDurability_04"].value, weightvalue = SS["MechWeight_04"].value, icon = "__PARs-SpaceAge-Extension__/graphics/icons/mech-armor.png"},
+	{order = "bae", helthbonus = 5000, flight = true, inventory_bonus = 500, grid_width = 120, grid_height = 120, durability= SS["MechDurability_05"].value, weightvalue = SS["MechWeight_05"].value, icon = "__PARs-SpaceAge-Extension__/graphics/icons/mech-armor.png"},
 }
-data:extend{
-	{
-		type = "equipment-grid",
-		name = "huge-equipment-grid",
-		width = 10,
-		height = 12,
-		equipment_categories = {"armor"}
-	},
-	{
+
+local resistances = {
+-- Vanilla     		         1,   2,   3,   4,   5,  
+    physical_decrease  = {  20,  40,  60,  80, 100},
+    physical_percent   = {   5,  15,  25,  35,  45},--p
+    acid_decrease      = {  50, 100, 150, 200, 250},
+    acid_percent       = {   5,  15,  25,  35,  45},--p
+    explosion_decrease = { 100, 200, 300, 400, 500},
+    explosion_percent  = {   5,  15,  25,  35,  45},--p
+    fire_decrease      = {  30,  60,  90, 120, 150},
+    fire_percent       = {  10,  20,  30,  40,  50},--p
+    poison_decrease    = {  20,  40,  60,  80, 100},
+    poison_percent     = {  15,  25,  35,  45,  55},--p
+    electric_decrease  = {  30,  40,  50,  60,  70},
+    electric_percent   = {  20,  40,  60,  80, 100},--p
+    impact_decrease    = {  50, 100, 150, 200, 250},
+    impact_percent     = {   5,  15,  25,  35,  45},--p
+    laser_decrease     = {  11,  22,  33,  44,  55},
+    laser_percent      = {   5,  15,  25,  35,  45},--p
+
+-- Bobs Warfare          	1,   2,   3,   4,   5,
+    plasma_decrease    = { 100, 200, 300, 400, 500},
+    plasma_percent     = {   5,  15,  25,  35,  45},--p
+    pierce_decrease    = { 100, 200, 300, 400, 500},
+    pierce_percent     = {   5,  15,  25,  35,  45},--p
+
+-- Cold_biters
+    cold_decrease      = { 50, 100, 150, 200, 250},
+    cold_percent       = {  2,   4,   6,   8,  10},--p
+
+-- K2/K2SO
+    radiation_decrease = { 100, 200, 300, 400, 500},
+    radiation_percent  = {   5,  20,  40,  60,  80},--p
+}
+
+for tier, mechsuit in pairs(MechSuits) do
+	local equipment_name = "par-mech-armour-mk" .. tier
+	local equipment_grid_name = "par-mech-armour-mk" .. tier .. "-equipment-grid"
+	local equipment_order = mechsuit.order .. "[par-armour-mk" .. tier .. "]-ab[armour-replacer]"
+
+    ---@type data.ArmorPrototype
+	local equipment_mechsuit= {
+		type = "armor",
+		name = equipment_name,
+		icon = mechsuit.icon,
+		stack_size = 1,
+		subgroup = "PAREXT_MechSuits",
+		order = equipment_order,
+		equipment_grid = equipment_grid_name, -- disable to removes quality. now make a setting or function that tells if setting = grids H-W 0 then remove grid entirely. make this code at C.A.S to not cause load order issues.
+		inventory_size_bonus = mechsuit.inventory_bonus,
+		character_health_bonus = mechsuit.helthbonus,
+		provides_flight = mechsuit.flight,
+		weight = mechsuit.weightvalue,
 		resistances = {
 			{
-				type = "physical",
-				decrease = 10,
-				percent = 50
-			},
-			{
-				type = "acid",
-				decrease = 0,
-				percent = 70
-			},
-			{
-				type = "explosion",
-				decrease = 60,
-				percent = 50
-			},
-			{
-				type = "fire",
-				decrease = 10,
-				percent = 70
-			}
+                type = "physical",
+                decrease = resistances.physical_decrease[tier],
+                percent = resistances.physical_percent[tier],
+            },
+            {
+                type = "acid",
+                decrease = resistances.acid_decrease[tier],
+                percent = resistances.acid_percent[tier],
+            },
+            {
+                type = "explosion",
+                decrease = resistances.explosion_decrease[tier],
+                percent = resistances.explosion_percent[tier],
+            },
+            {
+                type = "fire",
+                decrease = resistances.fire_decrease[tier],
+                percent = resistances.fire_percent[tier],
+            },
+            {
+                type = "electric",
+                decrease = resistances.electric_decrease[tier],
+                percent = resistances.electric_percent[tier],
+            },
+            {
+                type = "impact",
+                decrease = resistances.impact_decrease[tier],
+                percent = resistances.impact_percent[tier],
+            },
+            {
+                type = "laser",
+                decrease = resistances.laser_decrease[tier],
+                percent = resistances.laser_percent[tier],
+            },
+            {
+                type = "poison",
+                decrease = resistances.poison_decrease[tier],
+                percent = resistances.poison_percent[tier],
+            },
 		},
-		type = "armor",
-		name = "mech-armor",
-		icon = "__PARs-SpaceAge-Extension__/graphics/icons/mech-armor.png",
-		subgroup = "armor",
-		order = "f[mech-armor]",
 		factoriopedia_simulation = factoriopedia_mech_armor_simulation,
 		inventory_move_sound = item_sounds.armor_large_inventory_move,
 		pick_sound = item_sounds.armor_large_inventory_pickup,
 		drop_sound = item_sounds.armor_large_inventory_move,
-		stack_size = 1,
-		infinite = true,
-		equipment_grid = "huge-equipment-grid",
-		inventory_size_bonus = 50,
-		character_health_bonus = 1000,
-		provides_flight = true,
 		takeoff_sound = {filename = "__PARs-SpaceAge-Extension__/sound/mech-armor-takeoff.ogg", volume = 0.2, aggregation = {max_count = 2, remove = true, count_already_playing = true}},
 		landing_sound = {filename = "__PARs-SpaceAge-Extension__/sound/mech-armor-land.ogg", volume = 0.3, aggregation = {max_count = 2, remove = true, count_already_playing = true}},
 		flight_sound = {sound={filename = "__PARs-SpaceAge-Extension__/sound/mech-armor-flight.ogg", volume = 0.2}},
@@ -73,8 +126,16 @@ data:extend{
 		drawing_box = {{-0.4, -2}, {0.4, 0}},
 		open_sound = sounds.armor_open,
 		close_sound = sounds.armor_close,
-		weight = 1*tons
 	},
+
+	if SS["Durability"].value == "ArmourdurabilityOFF" then
+        equipment_mechsuit.infinite = true
+    elseif SS["Durability"].value == "ArmourDurabilityAll" then
+        equipment_mechsuit.durability = SS["SingleArmourDurabilitySetting"].value
+    elseif SS["Durability"].value == "ArmourDurabilitySolo" then
+        equipment_mechsuit.durability = mechsuit.durability
+    end
+
 	smoke_animations.trivial_smoke
 	{
 		name = "mech-armor-smoke",
@@ -85,5 +146,47 @@ data:extend{
 		fade_away_duration = 40,
 		start_scale = 0.1,
 		end_scale = 0.3
-	},
-}
+	}
+	---@type data.EquipmentGridPrototype
+    local equipment_grid = {
+        name = equipment_grid_name,
+        type = "equipment-grid",
+        equipment_categories = {"armor"},
+        width = mechsuit.grid_width,
+        height = mechsuit.grid_height,
+    },
+
+	if mods["bobenemies"] then
+        table.insert(equipment_mechsuit.resistances, {
+            type = "bob-plasma",
+            decrease = resistances.plasma_decrease[tier],
+            percent = resistances.plasma_percent[tier],
+        })
+        table.insert(equipment_mechsuit.resistances, {
+            type = "bob-pierce",
+            decrease = resistances.pierce_decrease[tier],
+            percent = resistances.pierce_percent[tier],
+        })
+    end
+
+    if mods["Cold_biters"] then
+        table.insert(equipment_mechsuit.resistances, {
+            type = "cold",
+            decrease = resistances.cold_decrease[tier],
+            percent = resistances.cold_percent[tier],
+        })
+    end
+
+    if (mods["Krastorio2"] or mods["Krastorio2-spaced-out"]) then
+        table.insert(equipment_mechsuit.resistances, {
+            type = "kr-radioactive",
+            decrease = resistances.radiation_decrease[tier],
+            percent = resistances.radiation_percent[tier],
+        })
+    end
+
+	data:extend({
+        equipment_mechsuit,
+		equipment_grid,
+    })
+end
