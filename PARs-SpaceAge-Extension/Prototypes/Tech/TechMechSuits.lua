@@ -1,12 +1,12 @@
 data:extend({
 	{
 		type = "technology",
-		name = "par-mech-armour-tech-mk1",
+		name = "par-mech-armour-tech-1",
 		icon = "__PARs-SpaceAge-Extension__/graphics/technology/mech-armor.png",
 		icon_size = 256,
 		order = "MechArmour01",
 		effects = {{type = "unlock-recipe", recipe = "par-mech-armour-recipe-mk1",}},
-		prerequisites = {"par-armour-tech-2", "logistic-science-pack", "military-science-pack"},
+		prerequisites = {"par-armour-tech-2", "military-science-pack"},
 		unit = {
 			count = 10000,
 			ingredients = {
@@ -20,12 +20,12 @@ data:extend({
 	},
 	{
 		type = "technology",
-		name = "par-mech-armour-tech-mk2",
+		name = "par-mech-armour-tech-2",
 		icon = "__PARs-SpaceAge-Extension__/graphics/technology/mech-armor.png",
 		icon_size = 256,
 		order = "MechArmour02",
 		effects = {{type = "unlock-recipe", recipe = "par-mech-armour-recipe-mk2" }},
-		prerequisites = {"par-armour-tech-4", "par-mech-armour-tech-mk1", "chemical-science-pack"},
+		prerequisites = {"par-armour-tech-4", "par-mech-armour-tech-1", "chemical-science-pack"},
 		unit = {
 			count = 10000,
 			ingredients = {
@@ -39,12 +39,12 @@ data:extend({
 	},
 	{
 		type = "technology",
-		name = "par-mech-armour-tech-mk3",
+		name = "par-mech-armour-tech-3",
 		icon = "__PARs-SpaceAge-Extension__/graphics/technology/mech-armor.png",
 		icon_size = 256,
 		order = "MechArmour03",
 		effects = {{type = "unlock-recipe", recipe = "par-mech-armour-recipe-mk3" }},
-		prerequisites = {"par-armour-tech-6", "par-mech-armour-tech-mk2", "production-science-pack"},
+		prerequisites = {"par-armour-tech-6", "par-mech-armour-tech-2", "production-science-pack"},
 		unit = {
 			count = 10000,
 			ingredients = {
@@ -59,12 +59,12 @@ data:extend({
 	},
 	{
 		type = "technology",
-		name = "par-mech-armour-tech-mk4",
+		name = "par-mech-armour-tech-4",
 		icon = "__PARs-SpaceAge-Extension__/graphics/technology/mech-armor.png",
 		icon_size = 256,
 		order = "MechArmour04",
 		effects = {{type = "unlock-recipe", recipe = "par-mech-armour-recipe-mk4" }},
-		prerequisites = {"par-armour-tech-8", "par-mech-armour-tech-mk3", "utility-science-pack", },
+		prerequisites = {"par-armour-tech-8", "par-mech-armour-tech-3", "utility-science-pack", },
 		unit = {
 			count = 10000,
 			ingredients = {
@@ -80,12 +80,12 @@ data:extend({
 	},
 	{
 		type = "technology",
-		name = "par-mech-armour-tech-mk5",
+		name = "par-mech-armour-tech-5",
 		icon = "__PARs-SpaceAge-Extension__/graphics/technology/mech-armor.png",
 		icon_size = 256,
 		order = "MechArmour05",
 		effects = {{type = "unlock-recipe", recipe = "par-mech-armour-recipe-mk5" }},
-		prerequisites = {"par-armour-tech-10", "par-mech-armour-tech-mk4", "space-science-pack"},
+		prerequisites = {"par-armour-tech-10", "par-mech-armour-tech-4", "space-science-pack"},
 		unit = {
 			count = 10000,
 			ingredients = {
@@ -105,7 +105,7 @@ if mods["space-age"]then
 	data:extend({
 		{
 			type = "technology",
-			name = "par-mech-armour-tech-mk1",
+			name = "par-mech-armour-tech-1",
 			icon = "__PARs-SpaceAge-Extension__/graphics/technology/mech-armor.png",
 			icon_size = 256,
 			order = "MechArmour01",
@@ -123,12 +123,12 @@ if mods["space-age"]then
 		},
 		{
 			type = "technology",
-			name = "par-mech-armour-tech-mk2",
+			name = "par-mech-armour-tech-2",
 			icon = "__PARs-SpaceAge-Extension__/graphics/technology/mech-armor.png",
 			icon_size = 256,
 			order = "MechArmour02",
 			effects = {{type = "unlock-recipe", recipe = "par-mech-armour-recipe-mk2" }},
-			prerequisites = {"par-armour-tech-4", "par-mech-armour-tech-mk1", "chemical-science-pack", "production-science-pack", "utility-science-pack"},
+			prerequisites = {"par-armour-tech-4", "par-mech-armour-tech-1", "chemical-science-pack", "production-science-pack", "utility-science-pack"},
 			unit = {
 				count = 10000,
 				ingredients = {
@@ -144,12 +144,12 @@ if mods["space-age"]then
 		},
 		{
 			type = "technology",
-			name = "par-mech-armour-tech-mk3",
+			name = "par-mech-armour-tech-3",
 			icon = "__PARs-SpaceAge-Extension__/graphics/technology/mech-armor.png",
 			icon_size = 256,
 			order = "MechArmour03",
 			effects = {{type = "unlock-recipe", recipe = "par-mech-armour-recipe-mk3" }},
-			prerequisites = {"par-armour-tech-6", "par-mech-armour-tech-mk2"},
+			prerequisites = {"par-armour-tech-6", "par-mech-armour-tech-2"},
 			unit = {
 				count = 10000,
 				ingredients = {
@@ -169,12 +169,12 @@ if mods["space-age"]then
 		},
 		{
 			type = "technology",
-			name = "par-mech-armour-tech-mk4",
+			name = "par-mech-armour-tech-4",
 			icon = "__PARs-SpaceAge-Extension__/graphics/technology/mech-armor.png",
 			icon_size = 256,
 			order = "MechArmour04",
 			effects = {{type = "unlock-recipe", recipe = "par-mech-armour-recipe-mk4" }},
-			prerequisites = {"par-armour-tech-8", "par-mech-armour-tech-mk3", },
+			prerequisites = {"par-armour-tech-8", "par-mech-armour-tech-3", },
 			unit = {
 				count = 10000,
 				ingredients = {
@@ -195,12 +195,12 @@ if mods["space-age"]then
 		},
 		{
 			type = "technology",
-			name = "par-mech-armour-tech-mk5",
+			name = "par-mech-armour-tech-5",
 			icon = "__PARs-SpaceAge-Extension__/graphics/technology/mech-armor.png",
 			icon_size = 256,
 			order = "MechArmour05",
 			effects = {{type = "unlock-recipe", recipe = "par-mech-armour-recipe-mk5" }},
-			prerequisites = {"par-armour-tech-10", "par-mech-armour-tech-mk4"},
+			prerequisites = {"par-armour-tech-10", "par-mech-armour-tech-4"},
 			unit = {
 				count = 10000,
 				ingredients = {
