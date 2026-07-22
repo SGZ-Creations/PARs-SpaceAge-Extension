@@ -11,7 +11,6 @@ local function mech_anim(name, table, light)
     local mask_table = {}
     local light_table = {}
     local shadow_table = {}
-
     for k,v in pairs(table) do
         light_table[k] = v
         mask_table[k] = v
@@ -20,8 +19,7 @@ local function mech_anim(name, table, light)
     mask_table.apply_runtime_tint = true
     shadow_table.draw_as_shadow = true
     local base_path = "__PARs-SpaceAge-Extension__/graphics/entity/"
-    local anim =
-    {
+    local anim = {
         layers = {
             util.sprite_load(base_path .. name, table),
             util.sprite_load(base_path .. name .. "-mask", mask_table),
@@ -35,7 +33,6 @@ local function mech_anim(name, table, light)
         light_table.draw_as_light = true
         anim.layers[4] = util.sprite_load(base_path .. name .. "-light", light_table)
     end
-
     return anim
 end
 

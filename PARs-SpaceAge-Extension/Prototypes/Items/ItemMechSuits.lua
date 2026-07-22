@@ -1,17 +1,8 @@
 require("__PARs-SpaceAge-Extension__.Structures.mech-armor-animations")
 local smoke_animations = require("__base__.prototypes.entity.smoke-animations")
-local tile_sounds = require("__mech-armor__/tile-sounds")
+
 local item_sounds = require("__base__.prototypes.item_sounds")
 local sounds = require("__base__.prototypes.entity.sounds")
-local Tiles = data.raw["tiles"]
-
-
--- Required to load space-travel feature flag without space age
-if not Tiles["empty-space"] then
-	local empty_space = table.deepcopy(Tiles["out-of-map"])
-	empty_space.name = "empty-space"
-	data:extend{empty_space}
-end
 
 local factoriopedia_mech_armor_simulation = {
 init = [[
@@ -54,7 +45,7 @@ data:extend{
 		},
 		type = "armor",
 		name = "mech-armor",
-		icon = "__mech-armor__/graphics/icons/mech-armor.png",
+		icon = "__PARs-SpaceAge-Extension__/graphics/icons/mech-armor.png",
 		subgroup = "armor",
 		order = "f[mech-armor]",
 		factoriopedia_simulation = factoriopedia_mech_armor_simulation,
@@ -67,15 +58,15 @@ data:extend{
 		inventory_size_bonus = 50,
 		character_health_bonus = 1000,
 		provides_flight = true,
-		takeoff_sound = {filename = "__mech-armor__/sound/mech-armor-takeoff.ogg", volume = 0.2, aggregation = {max_count = 2, remove = true, count_already_playing = true}},
-		landing_sound = {filename = "__mech-armor__/sound/mech-armor-land.ogg", volume = 0.3, aggregation = {max_count = 2, remove = true, count_already_playing = true}},
-		flight_sound = {sound={filename = "__mech-armor__/sound/mech-armor-flight.ogg", volume = 0.2}},
+		takeoff_sound = {filename = "__PARs-SpaceAge-Extension__/sound/mech-armor-takeoff.ogg", volume = 0.2, aggregation = {max_count = 2, remove = true, count_already_playing = true}},
+		landing_sound = {filename = "__PARs-SpaceAge-Extension__/sound/mech-armor-land.ogg", volume = 0.3, aggregation = {max_count = 2, remove = true, count_already_playing = true}},
+		flight_sound = {sound={filename = "__PARs-SpaceAge-Extension__/sound/mech-armor-flight.ogg", volume = 0.2}},
 		steps_sound =  {
-			variations = sound_variations("__mech-armor__/sound/mech-armor-steps-metallic", 5, 0.2),
+			variations = sound_variations("__PARs-SpaceAge-Extension__/sound/mech-armor-steps-metallic", 5, 0.2),
 			advanced_volume_control = default_tile_sounds_advanced_volume_control(),
 		},
 		moving_sound = {
-			variations = sound_variations("__mech-armor__/sound/mech-armor-moves", 10, 0.4),
+			variations = sound_variations("__PARs-SpaceAge-Extension__/sound/mech-armor-moves", 10, 0.4),
 			advanced_volume_control = default_tile_sounds_advanced_volume_control(),
 		},
 		collision_box = {{-0.25, -0.25}, {0.25, 0.25}},
@@ -96,36 +87,3 @@ data:extend{
 		end_scale = 0.3
 	},
 }
-
-Tiles["water-shallow"].landing_steps_sound = tile_sounds.landing.wet
-Tiles["grass-1"].landing_steps_sound = tile_sounds.landing.grass
-Tiles["grass-2"].landing_steps_sound = tile_sounds.landing.grass
-Tiles["grass-3"].landing_steps_sound = tile_sounds.landing.grass
-Tiles["grass-4"].landing_steps_sound = tile_sounds.landing.grass
-Tiles["dry-dirt"].landing_steps_sound = tile_sounds.landing.sand
-Tiles["dirt-1"].landing_steps_sound = tile_sounds.landing.sand
-Tiles["dirt-2"].landing_steps_sound = tile_sounds.landing.sand
-Tiles["dirt-3"].landing_steps_sound = tile_sounds.landing.sand
-Tiles["dirt-4"].landing_steps_sound = tile_sounds.landing.sand
-Tiles["dirt-5"].landing_steps_sound = tile_sounds.landing.sand
-Tiles["dirt-6"].landing_steps_sound = tile_sounds.landing.sand
-Tiles["dirt-7"].landing_steps_sound = tile_sounds.landing.sand
-Tiles["sand-1"].landing_steps_sound = tile_sounds.landing.sand
-Tiles["sand-2"].landing_steps_sound = tile_sounds.landing.sand
-Tiles["sand-3"].landing_steps_sound = tile_sounds.landing.sand
-Tiles["red-desert-0"].landing_steps_sound = tile_sounds.landing.sand
-Tiles["red-desert-1"].landing_steps_sound = tile_sounds.landing.sand
-Tiles["red-desert-2"].landing_steps_sound = tile_sounds.landing.sand
-Tiles["red-desert-3"].landing_steps_sound = tile_sounds.landing.sand
-Tiles["nuclear-ground"].landing_steps_sound = tile_sounds.landing.sand
-Tiles["stone-path"].landing_steps_sound = tile_sounds.landing.concrete
-Tiles["lab-dark-1"].landing_steps_sound = tile_sounds.landing.concrete
-Tiles["lab-dark-2"].landing_steps_sound = tile_sounds.landing.concrete
-Tiles["lab-white"].landing_steps_sound = tile_sounds.landing.concrete
-Tiles["tutorial-grid"].landing_steps_sound = tile_sounds.landing.concrete
-Tiles["concrete"].landing_steps_sound = tile_sounds.landing.concrete
-Tiles["hazard-concrete-left"].landing_steps_sound = tile_sounds.landing.concrete
-Tiles["hazard-concrete-right"].landing_steps_sound = tile_sounds.landing.concrete
-Tiles["refined-concrete"].landing_steps_sound = tile_sounds.landing.concrete
-Tiles["refined-hazard-concrete-left"].landing_steps_sound = tile_sounds.landing.concrete
-Tiles["refined-hazard-concrete-right"].landing_steps_sound = tile_sounds.landing.concrete
