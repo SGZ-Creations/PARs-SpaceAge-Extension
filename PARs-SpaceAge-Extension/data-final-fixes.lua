@@ -1,1 +1,1 @@
-	require("structures.filters")
+require("__PARs-SpaceAge-Extension__.Structures.filters")
