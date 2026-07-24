@@ -6,7 +6,7 @@ data:extend({
 		categories = {"par-electronic-hands"},
 		enabled = false,
 		energy_required = 60,
-		ingredients ={
+		ingredients = {
 			{type="item",name="electronic-circuit", amount=500},
 			{type="item",name="par-armour-mk2", amount=1},
 			{type="item",name="battery", amount=500},
