@@ -15,36 +15,36 @@ local MechSuits = {
 
 local resistances = {
 -- Vanilla     		         1,   2,   3,   4,   5,  
-    physical_decrease  = {  20,  40,  60,  80, 100},
-    physical_percent   = {   5,  15,  25,  35,  45},--p
-    acid_decrease      = {  50, 100, 150, 200, 250},
-    acid_percent       = {   5,  15,  25,  35,  45},--p
-    explosion_decrease = { 100, 200, 300, 400, 500},
-    explosion_percent  = {   5,  15,  25,  35,  45},--p
-    fire_decrease      = {  30,  60,  90, 120, 150},
-    fire_percent       = {  10,  20,  30,  40,  50},--p
-    poison_decrease    = {  20,  40,  60,  80, 100},
-    poison_percent     = {  15,  25,  35,  45,  55},--p
+    physical_decrease  = { 100, 200, 300, 400, 500},
+    physical_percent   = {  50, 150, 200, 250, 300},--p
+    acid_decrease      = {   0,   0,   0,   0,   0},
+    acid_percent       = { -50, -40, -30, -20, -10},--p
+    explosion_decrease = { 200, 400, 600, 800,1000},
+    explosion_percent  = {   0,   0,   0,   0,   0},--p
+    fire_decrease      = {   0,   0,   0,   0,   0},
+    fire_percent       = { 200, 400, 600, 800,1000},--p
+    poison_decrease    = {   0,   0,   0,   0,   0},
+    poison_percent     = {-500,-400,-300,-200,-100},--p
     electric_decrease  = {  30,  40,  50,  60,  70},
     electric_percent   = {  20,  40,  60,  80, 100},--p
     impact_decrease    = {  50, 100, 150, 200, 250},
     impact_percent     = {   5,  15,  25,  35,  45},--p
-    laser_decrease     = {  11,  22,  33,  44,  55},
-    laser_percent      = {   5,  15,  25,  35,  45},--p
+    laser_decrease     = { 100, 200, 300, 400, 500},
+    laser_percent      = {  40,  80, 120, 160, 200},--p
 
 -- Bobs Warfare          	1,   2,   3,   4,   5,
-    plasma_decrease    = { 100, 200, 300, 400, 500},
-    plasma_percent     = {   5,  15,  25,  35,  45},--p
+    plasma_decrease    = { 250, 500, 750,1000,1250},
+    plasma_percent     = {   0,   0,   0,   0,   0},--p
     pierce_decrease    = { 100, 200, 300, 400, 500},
     pierce_percent     = {   5,  15,  25,  35,  45},--p
 
 -- Cold_biters
     cold_decrease      = { 50, 100, 150, 200, 250},
-    cold_percent       = {  2,   4,   6,   8,  10},--p
+    cold_percent       = { 20,  40,  60,  80, 100},--p
 
 -- K2/K2SO
     radiation_decrease = { 100, 200, 300, 400, 500},
-    radiation_percent  = {   5,  20,  40,  60,  80},--p
+    radiation_percent  = {  25,  50,  75, 100, 125},--p
 }
 
 for tier, mechsuit in pairs(MechSuits) do

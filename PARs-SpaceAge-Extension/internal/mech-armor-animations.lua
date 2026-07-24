@@ -81,7 +81,6 @@ local idle_air = mech_anim("mech-idle-air",
 {
     frame_count = 5,
     animation_speed = 0.2,
-    --frame_sequence = idle_air_sequence,
     direction_count = 8,
     usage = "player",
 }, true)
@@ -105,7 +104,7 @@ table.insert(data.raw.character.character.animations, {
     smoke_cycles_per_tick = 0.25,
     extra_smoke_cycles_per_tile = 1.5,
     smoke_in_air = {
-        {
+        --[[{
             name = "mech-armor-smoke",
             deviation = {0.2, 0.2},
             frequency = 5,
@@ -124,7 +123,7 @@ table.insert(data.raw.character.character.animations, {
             starting_vertical_speed = -0.1,
             starting_vertical_speed_deviation = 0.04,
             height = 1
-        }
+        }]]
     }
 })
 
