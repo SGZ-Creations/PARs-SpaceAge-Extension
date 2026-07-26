@@ -133,11 +133,9 @@ if mods["space-age"]then
 				count = 10000,
 				ingredients = {
 					{"automation-science-pack", 10},
-					{"production-science-pack", 10},
 					{"logistic-science-pack", 10},
 					{"chemical-science-pack", 10},
 					{"military-science-pack", 10},
-					{"utility-science-pack", 10},
 				},
 				time = 10
 			}
@@ -161,7 +159,6 @@ if mods["space-age"]then
 					{"logistic-science-pack", 15},
 					{"chemical-science-pack", 15},
 					{"military-science-pack", 15},
-					{"utility-science-pack", 15},
 					{"space-science-pack", 15},
 				},
 				time = 10
