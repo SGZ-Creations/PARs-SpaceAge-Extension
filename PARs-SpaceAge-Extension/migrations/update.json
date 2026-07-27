@@ -1,0 +1,9 @@
+{
+    "recipe": [
+        ["par-mech-armour-recipe-mk1", "par-mech-armour-mk1" ],
+        ["par-mech-armour-recipe-mk2", "par-mech-armour-mk2" ],
+        ["par-mech-armour-recipe-mk3", "par-mech-armour-mk3" ],
+        ["par-mech-armour-recipe-mk4", "par-mech-armour-mk4" ],
+        ["par-mech-armour-recipe-mk5", "par-mech-armour-mk5" ]
+    ]
+}

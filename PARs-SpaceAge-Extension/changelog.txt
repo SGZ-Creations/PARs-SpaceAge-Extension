@@ -1,6 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: 27.07.26
+  Changes:
+    - Made all mech suit allow to fly due to tech cost and resistance levels. lore added to gamify it.
+  Bugfixes:
+    - Duplicate FactorioPedia input due to separate naming in Recipe & items.
+  Info:
+    - Parameterization issue are not caused by any issue in this mod. as in regular game all mech armours are working as expected.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.0
-Date: 24.10.2024
+Date: 25.07.26
   Features:
     - Initial mod structure.
     - Alpha release. Quite bear bone.

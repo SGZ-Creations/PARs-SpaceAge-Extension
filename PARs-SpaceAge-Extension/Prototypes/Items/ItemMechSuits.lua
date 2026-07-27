@@ -1,4 +1,3 @@
-local factoriopedia_mech_armor_simulation = { init = [[ game.simulation.camera_zoom = 3.5 game.simulation.camera_position = {0.5, -0.4} local character = game.surfaces[1].create_entity{name = "character", position = {0.5, 0.5}, force = "player", direction = defines.direction.south}character.insert{name = "mech-armor"}]]}
 require("__PARs-SpaceAge-Extension__.internal.mech-armor-animations")
 local smoke_animations = require("__base__.prototypes.entity.smoke-animations")
 local item_sounds = require("__base__.prototypes.item_sounds")
@@ -43,8 +42,8 @@ local resistances = {
     cold_percent       = { 20,  40,  60,  80, 100},--p
 
 -- K2/K2SO
-    radiation_decrease = { 100, 200, 300, 400, 500},
-    radiation_percent  = {  0,    0,    0,   0,   0},--p
+    radiation_decrease = {   0,   0,   0,   0,   0},
+    radiation_percent  = {-125,-100, -75, -50, -25},--p
 }
 
 for tier, mechsuit in pairs(MechSuits) do
@@ -109,7 +108,6 @@ for tier, mechsuit in pairs(MechSuits) do
                 percent = resistances.poison_percent[tier],
             },
 		},
-		factoriopedia_simulation = factoriopedia_mech_armor_simulation,
 		inventory_move_sound = item_sounds.armor_large_inventory_move,
 		pick_sound = item_sounds.armor_large_inventory_pickup,
 		drop_sound = item_sounds.armor_large_inventory_move,
@@ -127,6 +125,12 @@ for tier, mechsuit in pairs(MechSuits) do
 		open_sound = sounds.armor_open,
 		close_sound = sounds.armor_close,
 	}
+
+    if mods["space-age"] then
+        equipment_mechsuit.factoriopedia_simulation = require("__space-age__/prototypes/entity/mech-armor-animations") -- Wrong file location i guess. --using space age here. at least it work one place. 
+    else
+        equipment_mechsuit.factoriopedia_simulation = nil--Expected to be broken as of me disabling the armour in filters file --{init = [[game.simulation.camera_zoom = 3.5 game.simulation.camera_position = {0.5, -0.4} local character = game.surfaces[1].create_entity{name = "character", position = {0.5, 0.5}, force = "player", direction = defines.direction.south}character.insert{name = "mech-armor"}]]},
+    end
 
     ---@type data.EquipmentGridPrototype
     local equipment_grid = {

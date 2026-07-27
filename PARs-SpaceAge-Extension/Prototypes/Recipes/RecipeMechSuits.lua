@@ -1,7 +1,7 @@
 data:extend({
 	{
 		type = "recipe",
-		name = "par-mech-armour-recipe-mk1",
+		name = "par-mech-armour-mk1",
 		main_product = "par-mech-armour-mk1",
 		categories = {"par-electronic-hands"},
 		enabled = false,
@@ -15,7 +15,7 @@ data:extend({
 	},
 	{
 		type = "recipe",
-		name = "par-mech-armour-recipe-mk2",
+		name = "par-mech-armour-mk2",
 		main_product = "par-mech-armour-mk2",
 		categories = {"par-electronic-hands"},
 		enabled = false,
@@ -30,7 +30,7 @@ data:extend({
 	},
 	{
 		type = "recipe",
-		name = "par-mech-armour-recipe-mk3",
+		name = "par-mech-armour-mk3",
 		main_product = "par-mech-armour-mk3",
 		categories = {"par-electronics"},
 		enabled = false,
@@ -46,7 +46,7 @@ data:extend({
 	},
 	{
 		type = "recipe",
-		name = "par-mech-armour-recipe-mk4",
+		name = "par-mech-armour-mk4",
 		main_product = "par-mech-armour-mk4",
 		categories = {"par-electronics"},
 		enabled = false,
@@ -62,7 +62,7 @@ data:extend({
 	},
 	{
 		type = "recipe",
-		name = "par-mech-armour-recipe-mk5",
+		name = "par-mech-armour-mk5",
 		main_product = "par-mech-armour-mk5",
 		categories = {"par-electronics"},
 		enabled = false,
@@ -81,7 +81,7 @@ if mods["space-age"]then
 	data:extend({
 		{
 			type = "recipe",
-			name = "par-mech-armour-recipe-mk1",
+			name = "par-mech-armour-mk1",
 			main_product = "par-mech-armour-mk1",
 			categories = {"par-electronic-hands"},
 			enabled = false,
@@ -95,7 +95,7 @@ if mods["space-age"]then
 		},
 		{
 			type = "recipe",
-			name = "par-mech-armour-recipe-mk2",
+			name = "par-mech-armour-mk2",
 			main_product = "par-mech-armour-mk2",
 			categories = {"par-electronic-hands"},
 			enabled = false,
@@ -110,7 +110,7 @@ if mods["space-age"]then
 		},
 		{
 			type = "recipe",
-			name = "par-mech-armour-recipe-mk3",
+			name = "par-mech-armour-mk3",
 			main_product = "par-mech-armour-mk3",
 			categories = {"par-electronics"},
 			enabled = false,
@@ -131,7 +131,7 @@ if mods["space-age"]then
 		},
 		{
 			type = "recipe",
-			name = "par-mech-armour-recipe-mk4",
+			name = "par-mech-armour-mk4",
 			main_product = "par-mech-armour-mk4",
 			categories = {"par-electronics"},
 			enabled = false,
@@ -159,7 +159,7 @@ if mods["space-age"]then
 		},
 		{
 			type = "recipe",
-			name = "par-mech-armour-recipe-mk5",
+			name = "par-mech-armour-mk5",
 			main_product = "par-mech-armour-mk5",
 			categories = {"par-electronics"},
 			enabled = false,
