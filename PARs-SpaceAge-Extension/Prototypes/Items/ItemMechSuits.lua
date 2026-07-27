@@ -127,7 +127,7 @@ for tier, mechsuit in pairs(MechSuits) do
 	}
 
     if mods["space-age"] then
-        equipment_mechsuit.factoriopedia_simulation = require("__space-age__/prototypes/entity/mech-armor-animations") -- Wrong file location i guess. --using space age here. at least it work one place. 
+        equipment_mechsuit.factoriopedia_simulation = nil --require("__space-age__/prototypes/entity/mech-armor-animations") -- Wrong file location i guess. --using space age here. at least it work one place. 
     else
         equipment_mechsuit.factoriopedia_simulation = nil--Expected to be broken as of me disabling the armour in filters file --{init = [[game.simulation.camera_zoom = 3.5 game.simulation.camera_position = {0.5, -0.4} local character = game.surfaces[1].create_entity{name = "character", position = {0.5, 0.5}, force = "player", direction = defines.direction.south}character.insert{name = "mech-armor"}]]},
     end
