@@ -8,7 +8,7 @@ Date: 27.07.26
   Bugfixes:
     - [PA&R-E] Duplicate FactorioPedia input due to separate naming in Recipe & items.
   Info:
-    - [PA&R-E] Parameterization issue are not caused by any issue in this mod. as in regular game all mech armours are working as expected.
+    - [NA] Parameterization issue are not caused by any issue in this mod. as in regular game all mech armours are working as expected.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 25.07.26
