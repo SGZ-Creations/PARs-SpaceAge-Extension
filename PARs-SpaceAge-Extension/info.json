@@ -14,6 +14,7 @@
 		"(?) incendiary-arsenal >= 1.0.1",
 		"(?) metal-and-stars >= 0.1.19",
 		"(?) RampantArsenalFork >= 1.0.3",
+		"(?) TIMSABA >= 1.6.0",
 		"! mech-armor-settings"
 	],
 	"package": {
