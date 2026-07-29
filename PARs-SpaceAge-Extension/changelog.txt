@@ -1,6 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+Date: 29.07.26
+  Changes:
+    - [TIMSABA] Compatibility patch added.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.1
-Date: 27.07.26
+Date: 28.07.26
   Features:
     - [PA&R-E] Migration function added.
   Changes:
@@ -16,8 +21,13 @@ Date: 25.07.26
     - [PA&R-E] Initial mod structure.
     - [PA&R-E] Alpha release. Quite bear bone.
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.6
+Date: 29.07.26
+  Changes:
+    - [TIMSABA] Compatibility patch added.
+---------------------------------------------------------------------------------------------------
 Version: 0.0.5
-Date: 25.07.26
+Date: 28.07.26
   Info:
     - [PA&R-E] Down port of mod to 2.0. Since that's where most users still are also wanted to try the mod myself :P
     - [PA&R-E] Meaning: Alpha release. Quite bear bone still only mech armours available at this point.

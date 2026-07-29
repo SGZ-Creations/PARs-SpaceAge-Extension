@@ -4,7 +4,7 @@
 	"author": "SGZ_Creations",
 	"description": "PARs-SpaceAge-Extensions.",
 	"factorio_version": "2.1",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"space_travel_required": true,
 	"dependencies": [
 		"base", 
