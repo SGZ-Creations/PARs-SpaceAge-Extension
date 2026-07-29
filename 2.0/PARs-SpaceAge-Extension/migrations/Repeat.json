@@ -1,0 +1,27 @@
+{
+    "item": [
+        ["mech-armor", "par-mech-armour-mk2"],
+        ["prototype-mech-armor", "par-mech-armour-mk1"],
+        ["mech-armor-fireproof", "par-mech-armour-mk3"],
+        ["combat-mech-armor-rampant-arsenal", "par-mech-armour-mk5"]
+    ],
+    "entity": [
+        ["mech-armor", "par-mech-armour-mk2"],
+        ["prototype-mech-armor", "par-mech-armour-mk1"],
+        ["mech-armor-fireproof", "par-mech-armour-mk3"],
+        ["combat-mech-armor-rampant-arsenal", "par-mech-armour-mk5"]
+    ],
+    "equipment": [
+        ["mech-armor", "par-mech-armour-mk2" ],
+        ["prototype-mech-armor", "par-mech-armour-mk1"],
+        ["mech-armor-fireproof", "par-mech-armour-mk3"],
+        ["combat-mech-armor-rampant-arsenal", "par-mech-armour-mk5"]
+    ],
+    "recipe": [
+        ["mech-armor", "par-mech-armour-mk2" ],
+        ["prototype-mech-armor", "par-mech-armour-mk1"],
+        ["mech-armor-fireproof", "par-mech-armour-mk3"],
+        ["FireComabatUpgrade", "par-mech-armour-mk3"],
+        ["combat-mech-armor-rampant-arsenal", "par-mech-armour-mk5"]
+    ]
+}

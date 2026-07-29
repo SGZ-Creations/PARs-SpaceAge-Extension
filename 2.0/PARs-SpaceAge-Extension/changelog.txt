@@ -1,0 +1,25 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: 27.07.26
+  Features:
+    - [PA&R-E] Migration function added.
+  Changes:
+    - [PA&R-E] Made all mech suit allow to fly due to tech cost and resistance levels. lore added to gamify it.
+  Bugfixes:
+    - [PA&R-E] Duplicate FactorioPedia input due to separate naming in Recipe & items.
+  Info:
+    - [NA] Parameterization issue are not caused by any issue in this mod. as in regular game all mech armours are working as expected.
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+Date: 25.07.26
+  Features:
+    - [PA&R-E] Initial mod structure.
+    - [PA&R-E] Alpha release. Quite bear bone.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.5
+Date: 25.07.26
+  Info:
+    - [PA&R-E] Down port of mod to 2.0. Since that's where most users still are also wanted to try the mod myself :P
+    - [PA&R-E] Meaning: Alpha release. Quite bear bone still only mech armours available at this point.
+    - [PA&R-E] Does require PA&R 0.5.11 at minimum.
+    - [PA&R-E] Same as V 0.1.1.
