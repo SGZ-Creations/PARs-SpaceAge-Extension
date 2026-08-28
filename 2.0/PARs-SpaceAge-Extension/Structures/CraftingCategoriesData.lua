@@ -26,7 +26,7 @@ data:extend({
 		table.insert(data.raw["assembling-machine"]["electromagnetic-plant"].crafting_categories, "par-electronic-hands")
 	end
 
-	if (mods["Krastorio2"] or mods["Krastorio2-spaced-out"]) then
+	if mods["Krastorio2"] then
 		table.insert(data.raw["assembling-machine"]["kr-advanced-assembling-machine"].crafting_categories, "par-electronic-hands")
 	end
 ----------------------------------------------------Assemblers Only---------------------------------------------------------------------------
@@ -45,6 +45,6 @@ data:extend({
 		table.insert(data.raw["assembling-machine"]["electromagnetic-plant"].crafting_categories, "par-electronics")
 	end
 
-	if (mods["Krastorio2"] or mods["Krastorio2-spaced-out"]) then
+	if mods["Krastorio2"] then
 		table.insert(data.raw["assembling-machine"]["kr-advanced-assembling-machine"].crafting_categories, "par-electronics")
 	end

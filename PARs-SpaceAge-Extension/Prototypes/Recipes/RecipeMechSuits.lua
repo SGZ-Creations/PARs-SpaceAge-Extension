@@ -105,6 +105,7 @@ if mods["space-age"]then
 				{type="item",name="advanced-circuit", amount=1000},
 				{type="item",name="par-mech-armour-mk1", amount=1},
 				{type="item",name="electric-engine-unit", amount=1000},
+				{type="item", name="low-dnesity-structure", amount=1000},
 			},
 			results = {{type="item", name="par-mech-armour-mk2", amount=1}}
 		},
@@ -118,13 +119,13 @@ if mods["space-age"]then
 			ingredients = {
 				{type="item", name="par-armour-mk6", amount=1},
 				{type="item", name="par-mech-armour-mk2", amount=1},
+				{type="item", name="low-dnesity-structure", amount=1500},
 				{type="item", name="armour-control-unit", amount=1500},
 				{type="item", name="tungsten-carbide", amount=1500},
 				{type="item", name="tungsten-plate", amount=1500},
 				{type="item", name="supercapacitor", amount=1500},
 				{type="item", name="superconductor", amount=1500},
 				{type="item", name="holmium-plate", amount=1500},
-				{type="item", name="lithium-plate", amount=1500},
 				{type="item", name="carbon-fiber", amount=1500},
 			},
 			results = {{type="item", name="par-mech-armour-mk3", amount=1}}

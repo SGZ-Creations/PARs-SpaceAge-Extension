@@ -5,6 +5,7 @@ Date: 29.07.26
     - [TIMSABA] Compatibility patch added.
     - [Rampant Arsenal] Crash with Settings.
     - [KR2SO] Nil Assembler.
+    - [PA&R-E] Mk3-4 recipe corrections.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 28.07.26
@@ -28,6 +29,8 @@ Date: 29.07.26
   Changes:
     - [TIMSABA] Compatibility patch added.
     - [Rampant Arsenal] Crash with Settings.
+    - [KR2SO] Nil Assembler.
+    - [PA&R-E] Mk3-4 recipe corrections.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.5
 Date: 28.07.26
