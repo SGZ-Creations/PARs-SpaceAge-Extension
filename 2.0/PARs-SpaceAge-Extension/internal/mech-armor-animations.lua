@@ -103,28 +103,7 @@ table.insert(data.raw.character.character.animations, {
     landing = landing,
     smoke_cycles_per_tick = 0.25,
     extra_smoke_cycles_per_tile = 1.5,
-    smoke_in_air = {
-        --[[{
-            name = "mech-armor-smoke",
-            deviation = {0.2, 0.2},
-            frequency = 5,
-            position = {0.25, 1.0},
-            has_8_directions = true,
-            north_position = {0, 1.0 + 0.15},
-            north_east_position = {-0.5303, 0.8838},
-            east_position = {-0.9, 0.75},
-            south_east_position = {-0.8838 + 0.5, -0.5303 + 0.5},
-            south_position = {0, 1.0 - 0.5},
-            south_west_position = {0.5303, -0.8838 + 0.5},
-            west_position = {1, 0.75},
-            north_west_position = {0.8838 - 0.5, 0.5303 + 0.5},
-            starting_frame = 0,
-            starting_frame_deviation = 60,
-            starting_vertical_speed = -0.1,
-            starting_vertical_speed_deviation = 0.04,
-            height = 1
-        }]]
-    }
+    smoke_in_air = {}
 })
 
 table.insert(data.raw['character-corpse']['character-corpse'].pictures, corpse)
