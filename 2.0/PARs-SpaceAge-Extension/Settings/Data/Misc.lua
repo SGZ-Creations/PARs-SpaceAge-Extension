@@ -2,7 +2,7 @@ if (mods["space-age"] or mods["mech-armor"]) then
 	data:extend({
 		{
 			type = "bool-setting",
-			name = "MechMechFilters",
+			name = "MechFilters",
 			setting_type = "startup",
 			default_value = true,
 			order = "ZBaa-9"
@@ -24,7 +24,7 @@ if mods["space-age"] and mods["incendiary-arsenal"]then
 	data:extend({
 		{
 			type = "bool-setting",
-			name = "FireMechMechFilters",
+			name = "FireMechFilters",
 			setting_type = "startup",
 			default_value = true,
 			order = "ZBac-9"

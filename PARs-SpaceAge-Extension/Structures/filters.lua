@@ -24,7 +24,7 @@ if (mods["space-age"] or mods["mech-armor"])then
 
     Recipes["mech-armor"].hidden = true
     Tech["mech-armor"].hidden = true
-    if SS["MechMechFilters"].value then
+    if SS["MechFilters"].value then
         Hide_Item("mech-armor")
     end
 end
@@ -47,7 +47,7 @@ if mods["space-age"] and mods["incendiary-arsenal"]then
     Recipes["mech-armor-fireproof"].hidden = true
     Tech["mech-armor-fireproof"].hidden = true
 
-    if SS["FireMechMechFilters"].value then
+    if SS["FireMechFilters"].value then
         Hide_Item("mech-armor-fireproof")
     end
 end
@@ -57,7 +57,7 @@ if mods["RampantArsenalFork"] then
         Recipes["FireComabatUpgrade"].hidden = true
         Recipes["FireComabatUpgrade"].enabled = false
     end
-    if settings.startup["rampant-arsenal-enableEquipment"].value == true then
+    if SS["rampant-arsenal-enableEquipment"].value == true then
         if (mods["space-age"] or mods["mech-armor"]) then
             Tech["rampant-arsenal-technology-combat-mech-armor"].enabled = false
             Recipes["combat-mech-armor-rampant-arsenal"].enabled = false
