@@ -4,11 +4,11 @@
 	"author": "SGZ_Creations",
 	"description": "PARs-SpaceAge-Extensions.",
 	"factorio_version": "2.1",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"space_travel_required": true,
 	"dependencies": [
 		"base", 
-		"~ Power-Armour-Replacer >= 0.6.5",
+		"~ Power-Armour-Replacer >= 0.6.15",
 		"+ space-age",
 		"(?) mech-armor >= 1.0.0",
 		"(?) incendiary-arsenal >= 1.0.1",

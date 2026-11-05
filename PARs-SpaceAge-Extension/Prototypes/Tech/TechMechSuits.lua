@@ -128,7 +128,7 @@ if mods["space-age"]then
 			icon_size = 256,
 			order = "MechArmour02",
 			effects = {{type = "unlock-recipe", recipe = "par-mech-armour-mk2" }},
-			prerequisites = {"par-armour-tech-4", "par-mech-armour-tech-1", "chemical-science-pack", "production-science-pack", "utility-science-pack"},
+			prerequisites = {"par-armour-tech-4", "par-mech-armour-tech-1", "chemical-science-pack"},
 			unit = {
 				count = 10000,
 				ingredients = {
@@ -147,7 +147,7 @@ if mods["space-age"]then
 			icon_size = 256,
 			order = "MechArmour03",
 			effects = {{type = "unlock-recipe", recipe = "par-mech-armour-mk3" }},
-			prerequisites = {"par-armour-tech-6", "par-mech-armour-tech-2"},
+			prerequisites = {"par-armour-tech-6", "par-mech-armour-tech-2", "production-science-pack", "space-science-pack"},
 			unit = {
 				count = 10000,
 				ingredients = {
@@ -171,7 +171,7 @@ if mods["space-age"]then
 			icon_size = 256,
 			order = "MechArmour04",
 			effects = {{type = "unlock-recipe", recipe = "par-mech-armour-mk4" }},
-			prerequisites = {"par-armour-tech-8", "par-mech-armour-tech-3", },
+			prerequisites = {"par-armour-tech-8", "par-mech-armour-tech-3", "utility-science-pack"},
 			unit = {
 				count = 10000,
 				ingredients = {
