@@ -6,6 +6,8 @@ Date: xx.11.26
     - [K2] Tech Recipes. (WIP)
   Changes:
     - [PA&R-E][space-age] Prerequisites Production, Utility, Space,
+  Info:
+    - [PA&R-E] No More 2.0 Features.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.2
 Date: 29.07.26
