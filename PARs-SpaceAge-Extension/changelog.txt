@@ -3,6 +3,7 @@ Version: 0.1.3
 Date: 12.11.26
   Features:
     - [K2] Tech Compatibility.
+    - [K2] Recipe Compatibility (WIP).
   Changes:
     - [PA&R-E][space-age] Prerequisites Production, Utility, Space,
   Info:
